@@ -1,0 +1,29 @@
+{
+  "name": "template-node-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "dev": "tsnd -r tsconfig-paths/register --respawn src/app",
+    "build": "tsc && tsc-alias",
+    "lint": "eslint ./src --ext .ts",
+    "lint:fix": "eslint ./src --ext .ts --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "errorhandler": "^1.5.1",
+    "express": "^4.19.2",
+    "express-promise-router": "^4.1.1",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/errorhandler": "^1.5.3",
+    "@types/express": "^4.17.21"
+  }
+}
