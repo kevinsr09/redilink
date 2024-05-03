@@ -1,4 +1,4 @@
-import { LinkMinimizer } from '@/application/MinimizedLink/LinkMinimizer'
+import { ShortenedCreator } from '@/application/Shortened/Create'
 import { type Router } from 'express'
 
 import type express from 'express'
@@ -29,9 +29,9 @@ export const registerRoutes = (router: Router): void => {
     body('shorturl').isString().isLength({ min: 3, max: 10 }).withMessage('Must be between 3 and 10 characters')
 
   ]), async (req, res) => {
-    const minimizedLink = req.body.shorturl
-    const originalLink = req.body.url
-    await new LinkMinimizer().minimize({ originalURL, minimizedURL })
+    const shortUrl = req.body.shorturl as string
+    const url = req.body.url as string
+    await new ShortenedCreator().run(url, shortUrl)
 
     res.sendStatus(201)
   })
