@@ -20,7 +20,7 @@ export class Server {
     this.express.use(frameguard({ action: 'deny' }))
     this.express.use(compress())
     const router = asyncRouter()
-    this.express.use(router)
+    this.express.use('/api', router)
     registerRoutes(router)
 
     router.use((err: Error, req: express.Request, res: express.Response, next: NextFunction) => {
