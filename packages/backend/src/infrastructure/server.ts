@@ -4,6 +4,8 @@ import compress from 'compression'
 import type * as http from 'http'
 import asyncRouter from 'express-promise-router'
 import { registerRoutes } from './routes'
+import httpStatus from 'http-status'
+import { DomainError } from '@/domain/shared/DomainError'
 
 export class Server {
   private readonly express = express()
@@ -23,9 +25,14 @@ export class Server {
     this.express.use('/api', router)
     registerRoutes(router)
 
-    router.use((err: Error, req: express.Request, res: express.Response, next: NextFunction) => {
-      console.error({ err })
-      res.status(500).send(err.message)
+    router.use((_err: Error, _req: express.Request, res: express.Response, next: NextFunction) => {
+      console.log(_err.message)
+
+      if (_err instanceof DomainError) {
+        res.status(+httpStatus.BAD_REQUEST).send(_err.message)
+        return
+      }
+      res.status(+httpStatus.INTERNAL_SERVER_ERROR).send('Something went wrong!')
     })
   }
 

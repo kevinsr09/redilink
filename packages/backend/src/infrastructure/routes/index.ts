@@ -1,8 +1,6 @@
 import { type Router } from 'express'
-
 import type express from 'express'
 import { validationResult, type ContextRunner } from 'express-validator'
-
 import { sync as globSync } from 'glob'
 import httpStatus from 'http-status'
 export const validateReqSchema = (validations: ContextRunner[]) => {
@@ -27,7 +25,11 @@ export function registerRoutes (router: Router): void {
 }
 
 const register = async (routePath: string, router: Router): Promise<void> => {
-  const route: { register: (router: Router) => void } = await import(routePath)
-
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const route = require(routePath)
   route.register(router)
+
+  // const route: { register: (router: Router) => void } = await import(routePath)
+
+  // route.register(router)
 }

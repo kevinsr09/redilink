@@ -1,13 +1,13 @@
 import { LinkOriginal } from './LinkOriginal'
-import { LinkShortened } from './LinkShortened'
+import { LinkShort } from './LinkShort'
 
 export class Link {
   private readonly _original: LinkOriginal
-  private readonly _shortened: LinkShortened
+  private readonly _short: LinkShort
 
   private constructor (original: string, shortened?: string) {
     this._original = LinkOriginal.create(original)
-    this._shortened = (shortened != null) ? LinkShortened.create(shortened) : LinkShortened.random()
+    this._short = (shortened != null) ? LinkShort.create(shortened) : LinkShort.random()
   }
 
   static create (original: string, shortened?: string): Link {
@@ -18,11 +18,11 @@ export class Link {
     return this._original.value
   }
 
-  get shortened (): string {
-    return this._shortened.value
+  get short (): string {
+    return this._short.value
   }
 
   toString (): string {
-    return JSON.stringify({ original: this.original, shortened: this.shortened })
+    return JSON.stringify({ original: this.original, shortened: this.short })
   }
 }
