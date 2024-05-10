@@ -1,32 +1,34 @@
+import { ValueObject } from '../shared/value-object/ValueObject'
 import { LinkShortInvalidFormat } from './LinkShortInvalidFormat'
 import { LinkShortInvalidLength } from './LinkShortInvalidLength'
 
-export class LinkShort {
+export class LinkShort extends ValueObject<string> {
   private readonly pattern = /^[a-zA-Z0-9]+$/
+  static readonly MAX_LENGTH = 10
+  static readonly MIN_LENGTH = 3
 
-  public readonly value: string
-
-  private constructor (value: string) {
-    this.ensureIsValidShortenedUrl(value)
-    this.value = value
-  }
-
-  static create (value: string): LinkShort {
-    return new LinkShort(value)
+  constructor (value: string) {
+    super(value)
+    this.ensureIsValidLinkShort(value)
   }
 
   static random (): LinkShort {
-    return new LinkShort(Math.random().toString(36).substring(2, 9))
+    return new LinkShort(Math.random().toString(36).substring(LinkShort.MIN_LENGTH, LinkShort.MAX_LENGTH))
   }
 
-  private ensureIsValidShortenedUrl (url: string): void {
-    if (!this.pattern.test(url)) {
+  private ensureIsValidLinkShort (value: string): void {
+    this.ensureIsValidFormat(value)
+    this.ensureLengthIsValid(value)
+  }
+
+  private ensureIsValidFormat (value: string): void {
+    if (!this.pattern.test(value)) {
       throw new LinkShortInvalidFormat()
     }
   }
 
-  private ensureLengthIsValid (short: string): void {
-    if (short.length > 7 || short.length < 3) {
+  private ensureLengthIsValid (value: string): void {
+    if (value.length > LinkShort.MAX_LENGTH || value.length < LinkShort.MIN_LENGTH) {
       throw new LinkShortInvalidLength()
     }
   }

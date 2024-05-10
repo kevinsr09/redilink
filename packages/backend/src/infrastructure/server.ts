@@ -22,7 +22,8 @@ export class Server {
     this.express.use(frameguard({ action: 'deny' }))
     this.express.use(compress())
     const router = asyncRouter()
-    this.express.use('/api', router)
+    this.express.use(router)
+
     registerRoutes(router)
 
     router.use((_err: Error, _req: express.Request, res: express.Response, next: NextFunction) => {
@@ -30,6 +31,7 @@ export class Server {
 
       if (_err instanceof DomainError) {
         res.status(+httpStatus.BAD_REQUEST).send(_err.message)
+        console.log({ message: _err.message, name: _err.name })
         return
       }
       res.status(+httpStatus.INTERNAL_SERVER_ERROR).send('Something went wrong!')
