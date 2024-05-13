@@ -17,6 +17,7 @@
     "@libsql/client": "^0.6.0",
     "@prisma/adapter-libsql": "^5.13.0",
     "@prisma/client": "5.13.0",
+    "awilix": "^10.0.2",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "errorhandler": "^1.5.1",
