@@ -1,7 +1,7 @@
-import { type Query } from '@/domain/shared/Query/Query'
-import { type QueryHandler } from '@/domain/shared/Query/QueryHandler'
-import { QueryNotRegisteredError } from '@/domain/shared/Query/QueryNotRegisteredError'
-import { type Response } from '@/domain/shared/Query/Response'
+import { type Query } from '../../domain/Query/Query'
+import { type QueryHandler } from '../../domain/Query/QueryHandler'
+import { QueryNotRegisteredError } from '../../domain/Query/QueryNotRegisteredError'
+import { type Response } from '../../domain/Query/Response'
 
 export class QueryHandlers extends Map<Query, QueryHandler<Query, Response>> {
   constructor (queryHandlers: Array<QueryHandler<Query, Response>>) {

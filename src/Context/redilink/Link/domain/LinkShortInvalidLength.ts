@@ -1,4 +1,4 @@
-import { DomainError } from '../../shared/DomainError'
+import { DomainError } from '../../shared/domain/DomainError'
 
 export class LinkShortInvalidLength extends DomainError {
   constructor () {

@@ -1,7 +1,7 @@
-import { type Link } from '@/domain/Link/Link'
-import { LinkNotExist } from '@/domain/Link/LinkNotExist'
-import { type LinkRepository } from '@/domain/Link/LinkRepository'
-import { LinkShort } from '@/domain/Link/LinkShort'
+import { type Link } from '../../domain/Link'
+import { LinkNotExist } from '../../domain/LinkNotExist'
+import { type LinkRepository } from '../../domain/LinkRepository'
+import { LinkShort } from '../../domain/LinkShort'
 
 export class LinkFinder {
   constructor (private readonly repository: LinkRepository) {}

@@ -1,4 +1,4 @@
-import { ValueObject } from '../../shared/value-object/ValueObject'
+import { ValueObject } from '../../shared/domain/value-object/ValueObject'
 import { LinkShortInvalidFormat } from './LinkShortInvalidFormat'
 import { LinkShortInvalidLength } from './LinkShortInvalidLength'
 

@@ -1,8 +1,8 @@
-import { type QueryHandler } from '@/domain/shared/Query/QueryHandler'
 import { type LinkFinder } from './LinkFinder'
 import { FindLinkResponse } from './FindLinkResponse'
-import { type Query } from '@/domain/shared/Query/Query'
 import { FindLinkQuery } from './FindLinkQuery'
+import { type QueryHandler } from '@/Context/redilink/shared/domain/Query/QueryHandler'
+import { type Query } from '@/Context/redilink/shared/domain/Query/Query'
 
 export class FindLinkQueryHandler implements QueryHandler<FindLinkQuery, FindLinkResponse> {
   constructor (private readonly linkFinder: LinkFinder) {}

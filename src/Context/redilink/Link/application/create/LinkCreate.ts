@@ -1,5 +1,5 @@
-import { Link } from '@/domain/Link/Link'
-import { type LinkRepository } from '@/domain/Link/LinkRepository'
+import { Link } from '../../domain/Link'
+import { type LinkRepository } from '../../domain/LinkRepository'
 
 export class LinkCreator {
   constructor (private readonly repository: LinkRepository) {}

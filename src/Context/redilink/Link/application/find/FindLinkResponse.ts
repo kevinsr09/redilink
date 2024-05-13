@@ -1,5 +1,5 @@
-import { type Link } from '@/domain/Link/Link'
-import { type Response } from '@/domain/shared/Query/Response'
+import { type Response } from '@/Context/redilink/shared/domain/Query/Response'
+import { type Link } from '../../domain/Link'
 
 export class FindLinkResponse implements Response {
   constructor (public readonly link: Link) {}

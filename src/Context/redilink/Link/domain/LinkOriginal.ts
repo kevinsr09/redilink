@@ -1,4 +1,4 @@
-import { ValueObject } from '../../shared/value-object/ValueObject'
+import { ValueObject } from '../../shared/domain/value-object/ValueObject'
 
 export class LinkOriginal extends ValueObject<string> {
   private readonly patronURL = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})(:[0-9]{1,5})?(\/[\w/.-]*)*(\?[^\s]*)?$/

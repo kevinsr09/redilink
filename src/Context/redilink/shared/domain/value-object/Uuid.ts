@@ -1,5 +1,4 @@
 import { v4 as uuid, validate } from 'uuid'
-// import validate from 'uuid-validate'
 import { ValueObject } from './ValueObject'
 import { InvalidArgumentError } from './InvalidArgumentError'
 

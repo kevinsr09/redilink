@@ -5,7 +5,7 @@ import type * as http from 'http'
 import asyncRouter from 'express-promise-router'
 import { registerRoutes } from './routes'
 import httpStatus from 'http-status'
-import { DomainError } from '@/domain/shared/DomainError'
+import { DomainError } from '../../../../Context/redilink/shared/domain/DomainError'
 
 export class Server {
   private readonly express = express()
@@ -31,7 +31,7 @@ export class Server {
 
       if (_err instanceof DomainError) {
         res.status(+httpStatus.BAD_REQUEST).send(_err.message)
-        console.log({ message: _err.message, name: _err.name })
+        console.log({ message: _err.message, name: _err.name, stack: _err.stack })
         return
       }
       res.status(+httpStatus.INTERNAL_SERVER_ERROR).send('Something went wrong!')

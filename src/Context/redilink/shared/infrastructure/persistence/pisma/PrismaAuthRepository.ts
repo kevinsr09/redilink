@@ -1,6 +1,6 @@
-import { type AuthRepository } from '@/domain/Auth/AuthRepository'
+import { type AuthRepository } from '@/Context/redilink/Auth/domain/AuthRepository'
 import { PrismaRepository } from './PrismaRepository'
-import { AuthUser } from '@/domain/Auth/AuthUser'
+import { AuthUser } from '@/Context/redilink/Auth/domain/AuthUser'
 
 export class PrismaAuthRespository extends PrismaRepository implements AuthRepository {
   async save (auth: AuthUser): Promise<void> {

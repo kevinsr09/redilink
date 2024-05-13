@@ -1,4 +1,4 @@
-import { Command } from '../../../domain/shared/Command/Command'
+import { Command } from '@/Context/redilink/shared/domain/Command/Command'
 
 interface Params {
   original: string

@@ -1,7 +1,7 @@
-import { Link } from '@/domain/Link/Link'
-import { type LinkRepository } from '@/domain/Link/LinkRepository'
-import { type LinkShort } from '@/domain/Link/LinkShort'
+import { type LinkRepository } from '@/Context/redilink/Link/domain/LinkRepository'
 import { PrismaRepository } from './PrismaRepository'
+import { type LinkShort } from '@/Context/redilink/Link/domain/LinkShort'
+import { Link } from '@/Context/redilink/Link/domain/Link'
 
 export class PrismaLinkRepository extends PrismaRepository implements LinkRepository {
   async save (link: Link): Promise<void> {

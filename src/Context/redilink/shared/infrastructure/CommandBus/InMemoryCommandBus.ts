@@ -1,6 +1,6 @@
-import { type CommandBus } from '@/domain/shared/Command/CommandBus'
+import { type Command } from '../../domain/Command/Command'
+import { type CommandBus } from '../../domain/Command/CommandBus'
 import { type CommandHandlers } from './CommandHandlers'
-import { type Command } from '@/domain/shared/Command/Command'
 
 export class InMemoryCommandBus implements CommandBus {
   constructor (private readonly commandHandlers: CommandHandlers) {}

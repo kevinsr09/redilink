@@ -1,4 +1,4 @@
-import { type Primitives } from '../../shared/types'
+import { type Primitives } from '../../shared/domain/types'
 import { LinkOriginal } from './LinkOriginal'
 import { LinkShort } from './LinkShort'
 

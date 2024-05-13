@@ -1,5 +1,5 @@
-import { type Encryptor } from '@/domain/shared/Encryptor'
 import { hashSync, compareSync } from 'bcryptjs'
+import { type Encryptor } from '../../domain/Encryptor'
 
 export class BcryptEncryptor implements Encryptor {
   private static readonly salt = 10

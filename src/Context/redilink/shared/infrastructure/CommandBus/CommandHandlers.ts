@@ -1,6 +1,6 @@
-import { type Command } from '@/domain/shared/Command/Command'
-import { type CommandHandler } from '@/domain/shared/Command/CommandHandler'
-import { CommandNotRegisteredError } from '@/domain/shared/Command/CommandNotRegisteredError'
+import { type Command } from '../../domain/Command/Command'
+import { type CommandHandler } from '../../domain/Command/CommandHandler'
+import { CommandNotRegisteredError } from '../../domain/Command/CommandNotRegisteredError'
 
 export class CommandHandlers extends Map<Command, CommandHandler<Command>> {
   constructor (commandHandlers: Array<CommandHandler <Command>>) {

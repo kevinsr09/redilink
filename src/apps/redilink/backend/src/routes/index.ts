@@ -20,7 +20,7 @@ export const validateReqSchema = (validations: ContextRunner[]) => {
 }
 
 export function registerRoutes (router: Router): void {
-  const routes: string[] = globSync(__dirname + '/**/*.route.*')
+  const routes: string[] = globSync(__dirname + '/**/*.routes.*')
   routes.forEach(route => { void register(route, router) })
 }
 
