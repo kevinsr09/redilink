@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+:root{
+  --text: 265deg  40% 6%;
+  --background: 257deg 41% 97%;
+  --primary: 262deg 40% 55%;
+  --secondary: 58deg 40% 72%;
+  --accent: 112deg 40% 64%;
+
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+  :root{
+
+    --text: 265deg 40% 94%;
+    --background: 203deg 10% 16%;
+    --primary: 262deg 40% 45%;
+    --secondary: 58deg 40% 28%;
+    --accent: 112deg 40% 36%;
+  }
+}
