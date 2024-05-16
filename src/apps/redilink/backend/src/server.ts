@@ -6,14 +6,17 @@ import asyncRouter from 'express-promise-router'
 import { registerRoutes } from './routes'
 import httpStatus from 'http-status'
 import { DomainError } from '../../../../Context/redilink/shared/domain/DomainError'
+import { type Database } from '@/Context/redilink/shared/infrastructure/persistence/Database'
+import { PrismaDatabase } from '@/Context/redilink/shared/infrastructure/persistence/pisma'
 
 export class Server {
   private readonly express = express()
   private server?: http.Server
   public readonly port: number
+  private readonly db: Database
   constructor ({ port }: { port: number }) {
     this.port = port
-
+    this.db = new PrismaDatabase()
     this.express.use(json())
     this.express.use(urlencoded({ extended: true }))
     this.express.use(xssFilter())
@@ -26,8 +29,12 @@ export class Server {
 
     registerRoutes(router)
 
+    router.get('/', (_req: express.Request, res: express.Response) => {
+      res.redirect('/app')
+    })
+
     router.use((_err: Error, _req: express.Request, res: express.Response, next: NextFunction) => {
-      console.log(_err.message)
+      console.log(_err)
 
       if (_err instanceof DomainError) {
         res.status(+httpStatus.BAD_REQUEST).send(_err.message)
@@ -39,6 +46,7 @@ export class Server {
   }
 
   async listen (): Promise<void> {
+    await this.conectDatabase()
     await new Promise<void>((resolve, reject) => {
       this.server = this.express.listen(this.port, () => {
         console.log(`Server listening on port ${this.port}`)
@@ -48,6 +56,7 @@ export class Server {
   }
 
   async stop (): Promise<void> {
+    await this.db.close()
     await new Promise<void>((resolve, reject) => {
       if (this.server != null) {
         this.server.close((err) => {
@@ -59,5 +68,9 @@ export class Server {
       }
       resolve()
     })
+  }
+
+  async conectDatabase (): Promise<void> {
+    await this.db.connect()
   }
 }
