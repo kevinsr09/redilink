@@ -6,7 +6,7 @@ interface Props {
 export const Container = ({ children, as, className }: Props) => {
 
 
-  const containerClass = `w-full ${className}`
+  const containerClass = `${className}`
 
   switch (as) {
     case "section":
