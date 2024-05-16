@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "dev": "tsnd -r tsconfig-paths/register --respawn src/app",
-    "build": "tsc && tsc-alias",
+    "build": "rm -rf build && tsc && tsc-alias",
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix"
   },

@@ -26,7 +26,8 @@ module.exports = {
         "@typescript-eslint/no-extraneous-class": "off",
         "@typescript-eslint/no-misused-promises": "off",
         "@typescript-eslint/no-explicit-any": "error",
-        "n/no-path-concat": "off"
+        "n/no-path-concat": "off",
+        "import/no-unresolved": "off"
     },
 
     "ignorePatterns": [

@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:backend": "pnpm -F \"./src/apps/redilink/backend\" dev"
+    "dev:backend": "pnpm -F \"./src/apps/redilink/backend\" dev",
+    "build:backend": "pnpm -F \"./src/apps/redilink/backend\" build",
+    "dev:frontend": "pnpm -F \"./src/apps/redilink/frontend\" dev",
+    "build": "rm -rf build && tsc && tsc-alias",
+    "start": "node ./dist/apps/redilink/backend/src/app"
+
   },
   "keywords": [],
   "author": "",
