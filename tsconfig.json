@@ -9,7 +9,6 @@
     "test",
     "src/apps/redilink/frontend",
   ],
-
   
 
     
@@ -21,7 +20,7 @@
       "@/*": ["src/*"]
     },
 
-
+    
 
 
 
