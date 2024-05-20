@@ -34,16 +34,6 @@ module.exports = {
         "dist",
         "node_modules",
         ".eslintrc.js",
-        "test"
-    ],
-
-    "overrides": [
-        {
-            files: ['src/apps/redilink/frontend/**/*.ts', 'src/apps/frontend/**/*.tsx'],
-            parserOptions: {
-            project: ['./src/apps/frontend/tsconfig.json'],
-            },
-        },
     ]
 
     

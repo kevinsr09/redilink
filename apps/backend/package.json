@@ -1,5 +1,5 @@
 {
-  "name": "template-node-ts",
+  "name": "@redilink/backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "awilix": "^10.0.2",
     "compression": "^1.7.4",
     "dotenv": "^16.4.5",
@@ -24,9 +25,12 @@
     "express-validator": "^7.0.1",
     "glob": "^10.3.12",
     "helmet": "^7.1.0",
-    "http-status": "^1.7.4"
+    "http-status": "^1.7.4",
+    "prisma": "^5.13.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "vitest": "^1.6.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/compression": "^1.7.5",
     "@types/errorhandler": "^1.5.3",
