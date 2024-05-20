@@ -9,6 +9,7 @@ const libsql = createClient({
   authToken: `${envs.TURSO_AUTH_TOKEN}`
 })
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 const adapter = new PrismaLibSQL(libsql)
 export const prisma = new PrismaClient({ adapter })
 

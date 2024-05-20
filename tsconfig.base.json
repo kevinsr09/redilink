@@ -4,29 +4,29 @@
   "compilerOptions": {
 
     //
-    "strict": true,
     "strictNullChecks": true,
-    "noImplicitAny": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
 
     //
-    "target": "ES2016",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "sourceMap": true,
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "baseUrl": ".",
-    "rootDir": ".",
-    "outDir": "./dist"
-    
     //
-
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "target": "ES6",
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "sourceMap": false,
+    "rootDir": ".",
+    "strict": true,
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true
   },
   "exclude": [
     "node_modules",

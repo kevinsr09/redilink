@@ -1,5 +1,5 @@
-import { DomainError } from '../DomainError'
-import { type Command } from './Command'
+import { DomainError } from '../DomainError.js'
+import { type Command } from './Command.js'
 
 export class CommandNotRegisteredError extends DomainError {
   constructor (command: Command) {

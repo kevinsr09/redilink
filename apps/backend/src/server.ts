@@ -5,9 +5,9 @@ import type * as http from 'http'
 import asyncRouter from 'express-promise-router'
 import { registerRoutes } from './routes'
 import httpStatus from 'http-status'
-import { DomainError } from '../../../../Context/redilink/shared/domain/DomainError'
-import { type Database } from '@/Context/redilink/shared/infrastructure/persistence/Database'
-import { PrismaDatabase } from '@/Context/redilink/shared/infrastructure/persistence/pisma'
+import { type Database } from '@redilink/core/dist/shared/infrastructure/persistence/Database'
+import { PrismaDatabase } from '@redilink/core/dist/shared/infrastructure/persistence/pisma'
+import { DomainError } from '@redilink/core/dist/shared/domain/DomainError'
 
 export class Server {
   private readonly express = express()
