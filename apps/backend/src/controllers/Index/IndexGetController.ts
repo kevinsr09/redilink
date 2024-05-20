@@ -1,9 +1,8 @@
-import { type QueryBus } from '@/Context/redilink/shared/domain/Query/QueryBus'
+import { type FindLinkResponse } from '@redilink/core/dist/Link/application/find/FindLinkResponse'
+import { FindLinkQuery } from '@redilink/core/dist/Link/application/find/FindLinkQuery'
 import { type Controller } from '../Controller'
-import { type Request, type Response } from 'express'
-import { type FindLinkResponse } from '@/Context/redilink/Link/application/find/FindLinkResponse'
-import { FindLinkQuery } from '@/Context/redilink/Link/application/find/FindLinkQuery'
-
+import { type Response, type Request } from 'express'
+import { type QueryBus } from '@redilink/core'
 export class IndexGetController implements Controller {
   constructor (private readonly queryBus: QueryBus) {}
 

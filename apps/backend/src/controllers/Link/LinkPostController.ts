@@ -1,7 +1,7 @@
 import { type Controller } from '../Controller'
 import { type Request, type Response } from 'express'
-import { type CommandBus } from '@/Context/redilink/shared/domain/Command/CommandBus'
-import { CreateLinkCommand } from '@/Context/redilink/Link/application/create/CreateLinkCommand'
+import { type CommandBus } from '@redilink/core/dist/shared/domain/Command/CommandBus'
+import { CreateLinkCommand } from '@redilink/core/Link/application/create/CreateLinkCommand'
 import httpStatus from 'http-status'
 
 export class LinkPostController implements Controller {

@@ -1,10 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
+
   "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
-    "module": "ES6",
-    "lib": [],
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "ESNext",
   },
-  "include": ["./**/*.ts"]  
+  
+  "include": ["./**/*.ts", "./index.ts"],  
+
+  "exclude": ["node_modules", "dist", "test"]
 }
