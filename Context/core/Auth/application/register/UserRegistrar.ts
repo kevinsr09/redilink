@@ -1,5 +1,5 @@
-import { type AuthRepository } from 'Auth/domain/AuthRepository'
-import { AuthUser } from 'Auth/domain/AuthUser'
+import { type AuthRepository } from '../../domain/AuthRepository'
+import { AuthUser } from '../../domain/AuthUser'
 
 export class UserRegistrar {
   constructor (private readonly repository: AuthRepository) {}

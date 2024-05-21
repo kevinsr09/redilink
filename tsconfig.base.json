@@ -13,7 +13,7 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "baseUrl": ".",
     //
     "module": "CommonJS",
@@ -21,17 +21,18 @@
     "target": "ES6",
     "noImplicitAny": true,
     "moduleResolution": "Node",
-    "sourceMap": false,
+    "sourceMap": true,
     "rootDir": ".",
     "strict": true,
     "noEmit": false,
     "resolveJsonModule": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+
+    "paths": {
+      "@redilink/core/*": ["./Context/core"]
+    }
   },
   "exclude": [
-    "node_modules",
-    "dist",
-    "test"
-  ]
+    "node_modules"  ]
 
 }

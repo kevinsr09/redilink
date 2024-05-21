@@ -2,6 +2,7 @@
   "name": "@redilink/core",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.js",
@@ -12,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc",
     "build:tsup": "tsup ./index.ts --format esm,cjs --dts",
-    "build:tsup2": "tsup-node ./**/*.ts --format esm,cjs --dts --target=node10 --cjsInterop"
+    "build:tsup2": "tsup ./**/*.ts --format cjs --dts --target=node10 --cjsInterop"
   },
   "keywords": [],
   "author": "",

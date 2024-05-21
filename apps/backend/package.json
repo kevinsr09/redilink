@@ -8,7 +8,8 @@
     "test": "vitest run",
     "dev": "tsnd --respawn ./src/app.ts",
     "dev:2": "tsnd -r tsconfig-paths/register --respawn src/app.ts",
-    "build": "rm -rf build && tsc && tsc-alias",
+    "build": "rm -rf build && tsc",
+    "build:2": "rm -rf build && tsc && tsc-alias",
     "tsc": "tsc src/app.ts ",
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix"

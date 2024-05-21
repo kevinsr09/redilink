@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { type Encryptor } from 'shared/domain/Encryptor'
+import { type Encryptor } from 'Context/core/shared/domain/Encryptor'
 import { AuthEmail } from './AuthEmail'
 import { type AuthPassword } from './AuthPassword'
-import { BcryptEncryptor } from 'shared/infrastructure/adapters/BcryptEncryptor'
-import { type Primitives } from 'shared/domain/types'
+import { BcryptEncryptor } from 'Context/core/shared/infrastructure/adapters/BcryptEncryptor'
+import { type Primitives } from 'Context/core/shared/domain/types'
 
 export class AuthUser {
   private readonly _email: AuthEmail
@@ -20,7 +20,7 @@ export class AuthUser {
   }
 
   async passwordMatch (password: AuthPassword, encryptor: Encryptor = new BcryptEncryptor()): Promise<boolean> {
-    return encryptor.compare(password.value, this.password)
+    return await encryptor.compare(password.value, this.password)
   }
 
   get email (): string {

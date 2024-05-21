@@ -1,7 +1,7 @@
 import { type Router } from 'express'
 import { validateReqSchema } from '..'
 import { body } from 'express-validator'
-import { LinkShort } from '@/Context/redilink/Link/domain/LinkShort'
+import { LinkShort } from '@redilink/core/dist/Link/domain/LinkShort'
 import { linkGetController, linkPostController } from '../../dependency-injection'
 
 const reqSchema = [

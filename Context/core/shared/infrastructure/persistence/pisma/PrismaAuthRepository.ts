@@ -1,6 +1,6 @@
-import { type AuthRepository } from 'Auth/domain/AuthRepository'
+import { type AuthRepository } from 'Context/core/Auth/domain/AuthRepository'
 import { PrismaRepository } from './PrismaRepository'
-import { AuthUser } from 'Auth/domain/AuthUser'
+import { AuthUser } from 'Context/core/Auth/domain/AuthUser'
 
 export class PrismaAuthRespository extends PrismaRepository implements AuthRepository {
   async save (auth: AuthUser): Promise<void> {
