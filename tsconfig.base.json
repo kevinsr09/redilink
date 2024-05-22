@@ -3,36 +3,42 @@
   "compileOnSave": false,
   "compilerOptions": {
 
+    "strict": true,
+    "module": "commonjs",
+    "target": "ES6",
+    "composite": true,
+    "incremental": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ],
+
     //
     "strictNullChecks": true,
-    "skipLibCheck": true,
     "skipDefaultLibCheck": true,
 
     //
     "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": false,
-    "baseUrl": ".",
+    "importHelpers": true,
     //
-    "module": "CommonJS",
-    "esModuleInterop": true,
-    "target": "ES6",
     "noImplicitAny": true,
     "moduleResolution": "Node",
-    "sourceMap": true,
-    "rootDir": ".",
-    "strict": true,
-    "noEmit": false,
     "resolveJsonModule": true,
     "noUnusedLocals": true,
 
-    "paths": {
-      "@redilink/core/*": ["./Context/core"]
-    }
-  },
-  "exclude": [
-    "node_modules"  ]
+  }
 
 }

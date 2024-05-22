@@ -1,18 +1,9 @@
 import { InjectionMode, asClass, createContainer } from 'awilix'
-import { PrismaLinkRepository } from '@redilink/core/dist/shared/infrastructure/persistence/pisma/PrismaLinkRepository'
-import { PrismaAuthRespository } from '@redilink/core/dist/shared/infrastructure/persistence/pisma/PrismaAuthRepository'
-import { InMemoryCommandBus } from '@redilink/core/dist/shared/infrastructure/CommandBus/InMemoryCommandBus'
-import { CommandHandlers } from '@redilink/core/dist/shared/infrastructure/CommandBus/CommandHandlers'
-import { InMemoryQueryBus } from '@redilink/core/dist/shared/infrastructure/QueryBus/InMemoryQueryBus'
-import { QueryHandlers } from '@redilink/core/dist/shared/infrastructure/QueryBus/QueryHandlers'
-import { LinkCreator } from '@redilink/core/dist/Link/application/create/LinkCreate'
-import { LinkFinder } from '@redilink/core/dist/Link/application/find/LinkFinder'
-import { UserRegistrar } from '@redilink/core/dist/Auth/application/register/UserRegistrar'
-import { CreateLinkCommandHandler } from '@redilink/core/dist/Link/application/create/CreateLinkCommandHandler'
-import { FindLinkQueryHandler } from '@redilink/core/dist/Link/application/find/FindLinkQueryHandler'
+
 import { LinkGetController } from '../controllers/Link/LinkGetController'
 import { IndexGetController } from '../controllers/Index/IndexGetController'
 import { LinkPostController } from '../controllers/Link/LinkPostController'
+import { CommandHandlers, CreateLinkCommandHandler, FindLinkQueryHandler, InMemoryCommandBus, InMemoryQueryBus, LinkCreator, LinkFinder, PrismaAuthRespository, PrismaLinkRepository, QueryHandlers, UserRegistrar } from '@redilink/core/'
 
 export const container = createContainer({
   injectionMode: InjectionMode.CLASSIC,

@@ -1,8 +1,7 @@
 import { type Controller } from '../Controller'
 import { type Request, type Response } from 'express'
-import { type CommandBus } from '@redilink/core/dist/shared/domain/Command/CommandBus'
-import { CreateLinkCommand } from '@redilink/core/Link/application/create/CreateLinkCommand'
 import httpStatus from 'http-status'
+import { CreateLinkCommand, type CommandBus } from '@redilink/core/'
 
 export class LinkPostController implements Controller {
   constructor (private readonly commandBus: CommandBus) {}

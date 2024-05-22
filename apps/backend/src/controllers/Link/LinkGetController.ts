@@ -1,8 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import { FindLinkQuery, type FindLinkResponse, type QueryBus } from '@redilink/core/'
 import { type Controller } from '../Controller'
 import { type Request, type Response } from 'express'
-import { type FindLinkResponse } from '@redilink/core/dist/Link/application/find/FindLinkResponse'
-import { FindLinkQuery } from '@redilink/core/dist/Link/application/find/FindLinkQuery'
-import { type QueryBus } from '@redilink/core/dist'
 export class LinkGetController implements Controller {
   constructor (private readonly queryBus: QueryBus) {}
 

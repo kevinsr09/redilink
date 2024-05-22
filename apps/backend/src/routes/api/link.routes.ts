@@ -1,8 +1,9 @@
 import { type Router } from 'express'
 import { validateReqSchema } from '..'
 import { body } from 'express-validator'
-import { LinkShort } from '@redilink/core/dist/Link/domain/LinkShort'
+
 import { linkGetController, linkPostController } from '../../dependency-injection'
+import { LinkShort } from '@redilink/core/'
 
 const reqSchema = [
   body('url').isURL().withMessage('Invalid URL'),

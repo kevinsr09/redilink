@@ -2,16 +2,14 @@
   "name": "@redilink/core",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.js",
   "files": [
-    "dist/**"
+    "dist/**/*.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc --build tsconfig.build.json",
     "build:tsup": "tsup ./index.ts --format esm,cjs --dts",
     "build:tsup2": "tsup ./**/*.ts --format cjs --dts --target=node10 --cjsInterop"
   },
@@ -21,6 +19,14 @@
   "dependencies": {
     "@libsql/client": "^0.6.0",
     "@prisma/adapter-libsql": "^5.14.0",
-    "tsup": "^8.0.2"
+    "bcryptjs": "^2.4.3",
+    "env-var": "^7.5.0",
+    "ttypescript": "^1.5.15",
+    "typescript-transform-paths": "^3.4.7",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/uuid": "^9.0.8"
   }
 }

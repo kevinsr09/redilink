@@ -11,6 +11,7 @@ export const validateReqSchema = (validations: ContextRunner[]) => {
     }
 
     const errors = validationResult(req)
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (errors.isEmpty()) {
       next(); return
     }

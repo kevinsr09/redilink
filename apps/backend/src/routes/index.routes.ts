@@ -1,6 +1,6 @@
 import { type Router, static as _static } from 'express'
-import { PrismaLinkRepository } from '@redilink/core/dist/shared/infrastructure/persistence/pisma/PrismaLinkRepository'
 import { indexGetController } from '../dependency-injection'
+import { PrismaLinkRepository } from '@redilink/core/'
 
 export const prismaLinkRepository = new PrismaLinkRepository()
 export const register = (router: Router): void => {

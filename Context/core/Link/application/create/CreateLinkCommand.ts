@@ -1,4 +1,4 @@
-import { Command } from 'Context/core/shared/domain/Command/Command'
+import { Command } from 'shared'
 
 interface Params {
   original: string

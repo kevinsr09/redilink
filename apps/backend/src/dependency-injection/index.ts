@@ -1,12 +1,8 @@
-import { type LinkFinder } from '@redilink/core/dist/Link/application/find/LinkFinder'
-import { container } from './container'
-import { type LinkCreator } from '@redilink/core/dist/Link/application/create/LinkCreate'
-import { type UserRegistrar } from '@redilink/core/dist/Auth/application/register/UserRegistrar'
-import { type CommandBus } from '@redilink/core/dist/shared/domain/Command/CommandBus'
-import { type QueryBus } from '@redilink/core/dist/shared/domain/Query/QueryBus'
 import { type LinkGetController } from '../controllers/Link/LinkGetController'
 import { type IndexGetController } from '../controllers/Index/IndexGetController'
 import { type LinkPostController } from '../controllers/Link/LinkPostController'
+import { container } from './container'
+import { type UserRegistrar, type LinkCreator, type LinkFinder, type CommandBus, type QueryBus } from '@redilink/core/'
 
 export const linkFinder = container.resolve('linkFinder') as LinkFinder
 export const linkCreator = container.resolve('linkCreator') as LinkCreator

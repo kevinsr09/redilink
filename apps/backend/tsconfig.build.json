@@ -1,13 +1,16 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "importHelpers": false,
-    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "paths": {
       "@redilink/core/*": ["../../Context/core"],
-      "@src": ["./src"]
+      "@src": ["./src"],
+      
     },
     
+    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
   },
 
   "include": ["./src"],
@@ -19,7 +22,8 @@
 
   "references": [
     {
-      "path": "../../Context/core"}
-  ]
+      "path": "../../Context/core/tsconfig.build.json"}
+  ],
 
+ 
 }
