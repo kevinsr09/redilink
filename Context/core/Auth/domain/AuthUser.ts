@@ -2,9 +2,9 @@
 
 import { AuthEmail } from './AuthEmail'
 import { type AuthPassword } from './AuthPassword'
-import { BcryptEncryptor } from 'shared/infrastructure/adapters/BcryptEncryptor'
-import { type Primitives } from 'shared/domain/types'
-import { type Encryptor } from 'shared/domain/Encryptor'
+import { BcryptEncryptor } from '@core/shared/infrastructure/adapters/BcryptEncryptor'
+import { type Primitives } from '@core/shared/domain/types'
+import { type Encryptor } from '@core/shared/domain/Encryptor'
 
 export class AuthUser {
   private readonly _email: AuthEmail

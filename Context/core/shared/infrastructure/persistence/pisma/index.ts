@@ -1,8 +1,8 @@
 import { PrismaClient } from '@prisma/client'
 import { type Database } from '../Database'
-import { createClient } from '@libsql/client/.'
+import { createClient } from '@libsql/client'
 import { PrismaLibSQL } from '@prisma/adapter-libsql'
-import { envs } from 'shared/config/envs'
+import { envs } from '@core/shared/config/envs'
 
 const libsql = createClient({
   url: `${envs.TURSO_DATABASE_URL}`,

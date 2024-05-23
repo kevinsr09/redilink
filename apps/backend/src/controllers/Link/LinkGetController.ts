@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { FindLinkQuery, type FindLinkResponse, type QueryBus } from '@redilink/core/'
+import { FindLinkQuery, type FindLinkResponse, type QueryBus } from '../../../../../Context/core/dist/index'
 import { type Controller } from '../Controller'
 import { type Request, type Response } from 'express'
 export class LinkGetController implements Controller {

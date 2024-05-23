@@ -2,24 +2,15 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "importHelpers": false,
-    "baseUrl": ".",
-    "paths": {
-      "@redilink/core/*": ["../../Context/core"],
-      "@src": ["./src"]
-    },
+
+    "declaration": false
+
     
   },
 
   "include": ["./src"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "test"
-  ],
+ 
 
-  "references": [
-    {
-      "path": "../../Context/core"}
-  ]
+
 
 }

@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { InjectionMode, asClass, createContainer } from 'awilix'
 
 import { LinkGetController } from '../controllers/Link/LinkGetController'
 import { IndexGetController } from '../controllers/Index/IndexGetController'
 import { LinkPostController } from '../controllers/Link/LinkPostController'
-import { CommandHandlers, CreateLinkCommandHandler, FindLinkQueryHandler, InMemoryCommandBus, InMemoryQueryBus, LinkCreator, LinkFinder, PrismaAuthRespository, PrismaLinkRepository, QueryHandlers, UserRegistrar } from '@redilink/core/'
+import { CommandHandlers, CreateLinkCommandHandler, FindLinkQueryHandler, InMemoryCommandBus, InMemoryQueryBus, LinkCreator, LinkFinder, PrismaAuthRespository, PrismaLinkRepository, QueryHandlers, UserRegistrar } from '../../../../Context/core/dist/index'
 
 export const container = createContainer({
   injectionMode: InjectionMode.CLASSIC,

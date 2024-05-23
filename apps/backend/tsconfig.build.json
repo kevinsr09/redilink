@@ -4,26 +4,19 @@
     "importHelpers": false,
     "rootDir": "./src",
     "outDir": "./dist",
-    "paths": {
-      "@redilink/core/*": ["../../Context/core"],
-      "@src": ["./src"],
-      
-    },
+    "sourceMap": false,
     
-    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
+    //"tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
   },
 
-  "include": ["./src"],
+  "include": ["./src/**/*.ts"],
   "exclude": [
     "node_modules",
     "dist",
     "test"
   ],
 
-  "references": [
-    {
-      "path": "../../Context/core/tsconfig.build.json"}
-  ],
+
 
  
 }

@@ -3,7 +3,7 @@ import { validateReqSchema } from '..'
 import { body } from 'express-validator'
 
 import { linkGetController, linkPostController } from '../../dependency-injection'
-import { LinkShort } from '@redilink/core/'
+import { LinkShort } from '../../../../../Context/core/dist/index'
 
 const reqSchema = [
   body('url').isURL().withMessage('Invalid URL'),
