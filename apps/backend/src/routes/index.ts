@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { type Router } from 'express'
 import type express from 'express'
 import { validationResult, type ContextRunner } from 'express-validator'
 import { sync as globSync } from 'glob'
 import httpStatus from 'http-status'
+
 export const validateReqSchema = (validations: ContextRunner[]) => {
   return async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     for (const validation of validations) {

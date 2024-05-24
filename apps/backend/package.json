@@ -29,6 +29,7 @@
     "http-status": "^1.7.4",
     "prisma": "^5.13.0",
     "@redilink/core": "*",
+    "@redilink/frontend": "*",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

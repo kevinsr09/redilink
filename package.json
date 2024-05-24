@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "workspaces": [
     "packages/Context/*",
-    "apps/backend"
+    "apps/*"
   ],
   "dependencies": {
     "@prisma/client": "^5.14.0",

@@ -9,6 +9,7 @@
     "declaration": false,
 
     "paths": {
+      "@src/*": ["./src/*"]
     }
     
   },

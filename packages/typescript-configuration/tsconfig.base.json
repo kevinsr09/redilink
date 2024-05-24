@@ -12,6 +12,7 @@
     "target": "ES6",
     "module": "CommonJS",
     "skipLibCheck": true,
+    "strictNullChecks": true,
     "skipDefaultLibCheck": true,
   },
   "exclude": ["node_modules", "dist"]

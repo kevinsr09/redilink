@@ -1,3 +1,5 @@
 {  
   "extends": "@redilink/typescript-configuration/tsconfig.base.json",
+  "compilerOptions": {
+  }
 }
