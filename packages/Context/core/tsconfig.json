@@ -1,26 +1,24 @@
 {
   "extends": "@redilink/typescript-configuration/tsconfig.base.json",
+
   "compilerOptions": {
     "importHelpers": true,
-    "esModuleInterop": true,
-    "baseUrl": "./",
     "outDir": "./dist",
-    "sourceMap": false,
-    "declaration": false,
+    "baseUrl": "./",
 
     "paths": {
+      "@shared/*": ["./shared/*"],
+      "@Link/*": ["./Link/*"],
+      "@Auth/*": ["./Auth/*"],
     }
-    
   },
 
-  "include": ["./src"],
   "exclude": [
     "node_modules",
     "dist",
     "test"
   ],
- 
-
-
+  
+  "include": ["./Auth/**/*.ts","./Link/**/*.ts","./shared/**/*.ts","./index.ts"],  
 
 }

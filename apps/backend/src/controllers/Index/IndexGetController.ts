@@ -1,6 +1,6 @@
 import { type Controller } from '../Controller'
 import { type Response, type Request } from 'express'
-import { FindLinkQuery, type FindLinkResponse, type QueryBus } from '../../../../../Context/core/dist/index'
+import { FindLinkQuery, type FindLinkResponse, type QueryBus } from '@redilink/core'
 
 export class IndexGetController implements Controller {
   constructor (private readonly queryBus: QueryBus) {}

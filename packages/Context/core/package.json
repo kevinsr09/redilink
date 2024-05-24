@@ -7,11 +7,15 @@
   "files": [
     "dist/**/*.js"
   ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc --build tsconfig.build.json && tsc-alias -p tsconfig.build.json",
-    "build:tsup": "tsup ./index.ts --format esm,cjs --dts",
-    "build:tsup2": "tsup ./**/*.ts --format cjs --dts --target=node10 --cjsInterop"
+    "build": "rm -rf dist && tsc && tsc-alias"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
-    "@types/uuid": "^9.0.8"
+    "@types/uuid": "^9.0.8",
+    "@redilink/typescript-configuration": "*"
   }
 }
