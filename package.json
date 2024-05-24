@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "workspaces": [
     "packages/Context/*",
-    "apps/*"
+    "apps/backend"
   ],
   "dependencies": {
     "@prisma/client": "^5.14.0",
@@ -56,7 +56,8 @@
     "typescript": "^5.4.5",
     "typescript-transform-paths": "^3.4.7",
     "uuid": "^9.0.1",
-    "vitest": "^1.6.0"
+    "vitest": "^1.6.0",
+    "nx": "19.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
