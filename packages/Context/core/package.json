@@ -27,11 +27,16 @@
     "env-var": "^7.5.0",
     "ttypescript": "^1.5.15",
     "typescript-transform-paths": "^3.4.7",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "tslib": "^2.6.2",
+    "prisma": "^5.13.0"
+
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/uuid": "^9.0.8",
-    "@redilink/typescript-configuration": "*"
+    "@redilink/typescript-configuration": "*",
+    "typescript": "^5.4.5"
+
   }
 }
