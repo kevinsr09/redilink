@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="text-text">
+<html lang="en" class="text-text-100 bg-bg-100">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -17,31 +17,42 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body >
+    
 
-    <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 		<slot />
 	</body>
 </html>
 <style is:global>
 	
 	:root{
-  --text: 265deg  40% 6%;
-  --background: 257deg 41% 97%;
-  --primary: 262deg 40% 55%;
-  --secondary: 58deg 40% 72%;
-  --accent: 112deg 40% 64%;
-
+ 
+ --primary-100:#d4eaf7;
+    --primary-200:#b6ccd8;
+    --primary-300:#3b3c3d;
+    --accent-100:#71c4ef;
+    --accent-200:#00668c;
+    --text-100:#1d1c1c;
+    --text-200:#313d44;
+    --bg-100:#fffefb;
+    --bg-200:#f5f4f1;
+    --bg-300:#cccbc8;     
 }
 
 @media screen and (prefers-color-scheme: dark) {
 
   :root{
-
-    --text: 265deg 40% 94%;
-    --background: 203deg 10% 16%;
-    --primary: 262deg 40% 45%;
-    --secondary: 58deg 40% 28%;
-    --accent: 112deg 40% 36%;
+--primary-100:#1F3A5F;
+    --primary-200:#4d648d;
+    --primary-300:#acc2ef;
+    --accent-100:#3D5A80;
+    --accent-200:#cee8ff;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --text-300:#e0e0e095;
+    --text-400:#e0e0e040;
+    --bg-100:#0F1C2E;
+    --bg-200:#1f2b3e;
+    --bg-300:#374357;
   }
 }
 

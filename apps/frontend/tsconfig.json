@@ -29,6 +29,8 @@
     "skipLibCheck": true,
     // Allow JavaScript files to be imported
     "allowJs": true,
+    "jsx": "preserve",
+
     // Enable strict mode. This enables a few options at a time, see https://www.typescriptlang.org/tsconfig#strict for a list.
     "strict": true,
     "lib": ["es2020", "dom"]

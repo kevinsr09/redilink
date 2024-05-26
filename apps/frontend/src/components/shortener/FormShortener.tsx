@@ -6,7 +6,7 @@ export const FormShortener = (): JSX.Element => {
     e.preventDefault()
   }
   return (
-    <form className="form-shortener" onSubmit={handleSubmit}>
+    <form className="" onSubmit={handleSubmit}>
       <Input className="w-2/4 mx-auto"
               placeholder="https://rumos.xyz"
             ></Input>
