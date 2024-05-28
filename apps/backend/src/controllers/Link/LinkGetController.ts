@@ -6,9 +6,9 @@ export class LinkGetController implements Controller {
   constructor (private readonly queryBus: QueryBus) {}
 
   async run (req: Request, res: Response): Promise<void> {
-    const short = req.params.short
-    const { link } = await this.queryBus.ask<FindLinkResponse>(new FindLinkQuery(short))
+    const id = req.params.id
+    const { link } = await this.queryBus.ask<FindLinkResponse>(new FindLinkQuery(id))
 
-    res.json(link)
+    res.json(JSON.parse(link.toString()))
   }
 }

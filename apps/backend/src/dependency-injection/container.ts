@@ -4,7 +4,7 @@ import { InjectionMode, asClass, createContainer } from 'awilix'
 import { LinkGetController } from '../controllers/Link/LinkGetController'
 import { IndexGetController } from '../controllers/Index/IndexGetController'
 import { LinkPostController } from '../controllers/Link/LinkPostController'
-import { CommandHandlers, CreateLinkCommandHandler, FindLinkQueryHandler, InMemoryCommandBus, InMemoryQueryBus, LinkCreator, LinkFinder, PrismaAuthRespository, PrismaLinkRepository, QueryHandlers, UserRegistrar } from '@redilink/core'
+import { CommandHandlers, CreateLinkCommandHandler, FindLinkByShortQueryHandler, FindLinkQueryHandler, InMemoryCommandBus, InMemoryQueryBus, LinkCreator, LinkFinder, LinkFinderByShort, PrismaAuthRespository, PrismaLinkRepository, QueryHandlers, UserRegistrar } from '@redilink/core'
 
 export const container = createContainer({
   injectionMode: InjectionMode.CLASSIC,
@@ -20,6 +20,8 @@ container.register({
   linkCreator: asClass(LinkCreator).singleton().inject(() => ({ repository: container.resolve('linkRepository') })),
 
   linkFinder: asClass(LinkFinder).singleton().inject(() => ({ repository: container.resolve('linkRepository') })),
+
+  linkFinderByShort: asClass(LinkFinderByShort).singleton().inject(() => ({ repository: container.resolve('linkRepository') })),
 
   userRegistrar: asClass(UserRegistrar).singleton().inject(() => ({ repository: container.resolve('authRepository') })),
 
@@ -37,11 +39,14 @@ container.register({
   // Query Handlers
   findLinkQueryHandler: asClass(FindLinkQueryHandler).singleton().inject(() => ({ linkFinder: container.resolve('linkFinder') })),
 
+  findLinkByShortQueryHandler: asClass(FindLinkByShortQueryHandler).singleton().inject(() => ({ linkFinderByShort: container.resolve('linkFinderByShort') })),
+
   // QueryBus
 
   queryHandlers: asClass(QueryHandlers).singleton().inject(() => ({
     queryHandlers: [
-      container.resolve('findLinkQueryHandler')
+      container.resolve('findLinkQueryHandler'),
+      container.resolve('findLinkByShortQueryHandler')
     ]
   })),
 
@@ -50,7 +55,7 @@ container.register({
   // Controllers
   linkGetController: asClass(LinkGetController).singleton().inject(() => ({ queryBus: container.resolve('queryBus') })),
 
-  linkPostController: asClass(LinkPostController).singleton().inject(() => ({ commandBus: container.resolve('commandBus') })),
+  linkPostController: asClass(LinkPostController).singleton().inject(() => ({ commandBus: container.resolve('commandBus'), queryBus: container.resolve('queryBus') })),
 
   indexGetController: asClass(IndexGetController).singleton().inject(() => ({ queryBus: container.resolve('queryBus') }))
 

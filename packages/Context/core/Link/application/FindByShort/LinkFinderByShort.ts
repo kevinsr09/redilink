@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { LinkId } from '@Link/domain/LinkId'
 import { type Link } from '../../domain/Link'
 import { LinkNotExist } from '../../domain/LinkNotExist'
 import { type LinkRepository } from '../../domain/LinkRepository'
+import { LinkShort } from '../../domain/LinkShort'
 
-export class LinkFinder {
+export class LinkFinderByShort {
   constructor (private readonly repository: LinkRepository) {}
-  async run (id: string): Promise<Link> {
-    const linkId = new LinkId(id)
-    const link = await this.repository.search(linkId)
+  async run (short: string): Promise<Link> {
+    const linkShort = new LinkShort(short)
+    const link = await this.repository.searchByShort(linkShort)
     if (link == null) {
       throw new LinkNotExist('Link not found')
     }

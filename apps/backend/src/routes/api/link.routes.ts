@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { type Router } from 'express'
 import { validateReqSchema } from '..'
 import { body } from 'express-validator'
@@ -12,6 +13,6 @@ const reqSchema = [
 ]
 
 export const register = (router: Router): void => {
-  router.get('/api/links/:short', linkGetController.run.bind(linkGetController))
+  router.get('/api/links/:id', linkGetController.run.bind(linkGetController))
   router.post('/api/links', validateReqSchema(reqSchema), linkPostController.run.bind(linkPostController))
 }

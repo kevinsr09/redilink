@@ -12,6 +12,7 @@ datasource db {
 }
 
 model Link {
+  id       String @id
   original String
   short    String @unique
 

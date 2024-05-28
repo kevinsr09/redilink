@@ -1,7 +1,7 @@
 import { Query } from '@shared/domain/Query/Query'
 
 export class FindLinkQuery extends Query {
-  constructor (public readonly short: string) {
+  constructor (public readonly id: string) {
     super()
   }
 }
