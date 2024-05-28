@@ -6,6 +6,8 @@ import asyncRouter from 'express-promise-router'
 import { registerRoutes } from './routes'
 import httpStatus from 'http-status'
 import { type Database, PrismaDatabase, DomainError } from '@redilink/core'
+
+import cors = require('cors')
 export class Server {
   private readonly express = express()
   private server?: http.Server
@@ -20,6 +22,7 @@ export class Server {
     this.express.use(noSniff())
     this.express.use(hidePoweredBy())
     this.express.use(frameguard({ action: 'deny' }))
+    this.express.use(cors())
     this.express.use(compress())
     const router = asyncRouter()
     this.express.use(router)

@@ -2,6 +2,7 @@
 {
     "version": "1.0.0",
     "configurations": [
+
         {
             "name": "Service",
             "runtimeVersion": "18.17.0",
@@ -13,9 +14,9 @@
             "skipFiles": ["<node_internals>/**"],
         },
         {
-            "name": "Watch",
-            "runtimeVersion": "16.0.0",
-            "runtimeArgs": ["start", "dev"], // npm run start:dev
+            "name": "watch",
+            "runtimeVersion": "18.17.0",
+            "runtimeArgs": ["dev:backend"], // npm run dev backend
             "request": "launch",
             "runtimeExecutable": "npm",
             "type": "node",

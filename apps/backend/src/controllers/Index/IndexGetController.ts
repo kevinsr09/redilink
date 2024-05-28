@@ -7,10 +7,16 @@ export class IndexGetController implements Controller {
 
   async run (req: Request, res: Response): Promise<void> {
     const short = req.params.short
-    console.log(short)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const { link } = await this.queryBus.ask<FindLinkResponse>(new FindLinkByShortQuery(short))
+
+    let original = link.original
+    const includeProtocol = (original.startsWith('http://') || original.startsWith('https://'))
+    if (!includeProtocol) {
+      original = 'http://' + original
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    res.redirect(link.original)
+    res.redirect(original)
   }
 }

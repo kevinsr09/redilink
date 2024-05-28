@@ -5,14 +5,17 @@ import { Scissors } from '../icons/Scissors'
 interface Props {
   children?: React.ReactNode
   className?: string
-  placeholder?: string
+  placeholder?: string,
+  name?: string
+  autoComplete?: string
 }
-export const Input = ({ className, placeholder }: Props): JSX.Element => {
+export const Input = ({ className, placeholder, name, autoComplete }: Props): JSX.Element => {
   return <div className={`w-[600px] h-[60px] overflow-hidden relative ${className} `}>
-  <input type="text" className="bg-bg-200 outline-none border-none text-text-400 text-lg w-full rounded-lg h-full transition-all ease-in-out ps-3 pr-14 
+  <input name={name} autoComplete={autoComplete ?? 'off'} type="text"  className="bg-bg-200 outline-none border-none  text-text-400 text-lg w-full rounded-lg h-full transition-all ease-in-out ps-3 pr-14 
   hover:text-text-300 
   focus:text-text-300
   focus:bg-bg-200
+  focus-raro
    " placeholder={placeholder ?? 'Search'}/>
   <button className="border-none absolute top-0 right-0 h-full rounded-lg aspect-square px-3 hover:text-primary-300">
     <Scissors className="h-6 w-6 "></Scissors>
