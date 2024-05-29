@@ -11,7 +11,8 @@ interface Props {
 }
 export const Input = ({ className, placeholder, name, autoComplete }: Props): JSX.Element => {
   return <div className={`w-[600px] h-[60px] overflow-hidden relative ${className} `}>
-  <input name={name} autoComplete={autoComplete ?? 'off'} type="text"  className="bg-bg-200 outline-none border-none  text-text-400 text-lg w-full rounded-lg h-full transition-all ease-in-out ps-3 pr-14 
+  <input name={name}
+   type="text"  className="bg-cod-gray-500 outline-none border-none  text-text-400 text-lg w-full rounded-lg h-full transition-all ease-in-out ps-3 pr-14 
   hover:text-text-300 
   focus:text-text-300
   focus:bg-bg-200
