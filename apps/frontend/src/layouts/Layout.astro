@@ -7,16 +7,17 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="text-cod-gray-200 bg-cod-gray-950">
+<html lang="en" class="bg-cod-gray-950 ">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/app/favicon.svg" />
+    <link rel="stylesheet" href="/app/styles.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body >
+	<body class="text-cod-gray-300">
     <div class="grid"></div>
     
 
@@ -25,12 +26,31 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	
+  @font-face {
+    font-family: 'Poppins';
+    font-display: swap;
+    src: url(/app/fonts/poppins/Poppins-Regular.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Poppins-Bold';
+    font-display: swap;
+    src: url(/app/fonts/poppins/Poppins-Bold.ttf) format('truetype');
+  }
+  body{
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+  }
+  
   .grid {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: -1;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Crect width='40' height='40' fill='transparent' /%3E%3Crect x='50%' width='1' height='100%' fill='hsl(0 0% 15%)' /%3E%3Crect y='50%' width='100%' height='1' fill='hsl(0 0% 15%)' /%3E%3C/svg%3E%0A");
+    mask-image: linear-gradient(to bottom, transparent 40%, hsl(0 0% 0% / 0.5) 100%);
 }
 	:root{
 
@@ -45,40 +65,13 @@ const { title } = Astro.props;
   --cod-gray-800: 0 0% 27%;
   --cod-gray-900: 0 0% 24%;
   --cod-gray-950: 0 0% 7%;
-/*  
- --primary-100:#d4eaf7;
-    --primary-200:#b6ccd8;
-    --primary-300:#3b3c3d;
-    --accent-100:#71c4ef;
-    --accent-200:#00668c;
-    --text-100:#1d1c1c;
-    --text-200:#313d44;
-    --bg-100:#fffefb;
-    --bg-200:#f5f4f1;
-    --bg-300:#cccbc8;      */
 }
 
-@media screen and (prefers-color-scheme: dark) {
-/* 
-  :root{
---primary-100:#1F3A5F;
-    --primary-200:#4d648d;
-    --primary-300:#acc2ef;
-    --accent-100:#3D5A80;
-    --accent-200:#cee8ff;
-    --text-100:#FFFFFF;
-    --text-200:#e0e0e0;
-    --text-300:#e0e0e095;
-    --text-400:#e0e0e040;
-    --bg-100:#0F1C2E;
-    --bg-200:#1f2b3e;
-    --bg-300:#374357;
-  } */
-
-}
 
   input:-webkit-autofill,
   input:-webkit-autofill:focus {
     transition: background-color 0s 600000s, color 0s 600000s !important;
   }
+
+  
 </style>

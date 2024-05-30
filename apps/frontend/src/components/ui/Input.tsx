@@ -12,11 +12,25 @@ interface Props {
 export const Input = ({ className, placeholder, name, autoComplete }: Props): JSX.Element => {
   return <div className={`w-[600px] h-[60px] overflow-hidden relative ${className} `}>
   <input name={name}
-   type="text"  className="bg-cod-gray-500 outline-none border-none  text-text-400 text-lg w-full rounded-lg h-full transition-all ease-in-out ps-3 pr-14 
-  hover:text-text-300 
-  focus:text-text-300
-  focus:bg-bg-200
-  focus-raro
+   type="text"  
+   className="
+    bg-cod-gray-800/30
+    border-2 
+    border-cod-gray-500/50 
+    outline-none   
+    text-cod-gray-400 
+    text-lg 
+    w-full 
+    rounded-lg 
+    h-full 
+    transition-all 
+    ease-in-out 
+    ps-3 pr-14 
+    hover:text-cod-gray-300 
+    hover:border-cod-gray-500 
+    focus:text-cod-gray-300
+    focus:boder-cod-gray-500 
+    placeholder:text-cod-gray-500/50
    " placeholder={placeholder ?? 'Search'}/>
   <button className="border-none absolute top-0 right-0 h-full rounded-lg aspect-square px-3 hover:text-primary-300">
     <Scissors className="h-6 w-6 "></Scissors>
