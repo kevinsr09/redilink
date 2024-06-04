@@ -1,12 +1,16 @@
 import { Input } from '../ui/Input'
 import { useStore } from '@nanostores/react';
-import { isSubmit,linkShortData } from '../../stores/formStore';
+import { isSubmit,linkShortData, isLoading } from '../../stores/formStore';
+import { Loader } from '../ui/Loader';
 export const FormShortener = (): JSX.Element => {
 
   const $isSubmit = useStore(isSubmit)
   const $linkData = useStore(linkShortData)
+  const $isLoading = useStore(isLoading)
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
+    isLoading.set(true)
+    isSubmit.set(false)
     const data = new FormData(e.target as HTMLFormElement)
 
     const url = data.get('url')
@@ -16,9 +20,12 @@ export const FormShortener = (): JSX.Element => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({url})
-    }).then(res => res.json()).then(data => linkShortData.set(data)).catch(err => console.error(err))
+    }).then(res => res.json()).then(data =>{
+      isSubmit.set(true) 
+      linkShortData.set(data)
+    }).catch(err => console.error(err)).finally(() => isLoading.set(false))
 
-    isSubmit.set(true)
+    
 
 
 
@@ -36,6 +43,10 @@ export const FormShortener = (): JSX.Element => {
         <p className="text-text-300 text-sm">Shorted url: https://rumos.xyz/{"http://localhost:3001/" +$linkData.short}
         </p>
       </div>
+
+    }
+    {
+      $isLoading && <div><Loader></Loader></div>
     }
               </>
   )
