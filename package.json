@@ -2,7 +2,8 @@
   "name": "@redilink/source",
   "version": "1.0.0",
   "workspaces": [
-    "packages/Context/*",
+    "packages/*",
+    "Context/*",
     "apps/*"
   ],
   "scripts": {

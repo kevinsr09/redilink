@@ -7,7 +7,7 @@ import { registerRoutes } from './routes'
 import httpStatus from 'http-status'
 import { type Database, PrismaDatabase, DomainError } from '@redilink/core'
 
-import cors = require('cors')
+import cors from 'cors'
 export class Server {
   private readonly express = express()
   private server?: http.Server

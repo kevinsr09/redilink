@@ -4,6 +4,7 @@
   "compilerOptions": {
     "importHelpers": true,
     "outDir": "./dist",
+    "target": "ES6",
     "baseUrl": "./",
 
     "paths": {
