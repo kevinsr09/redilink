@@ -1,7 +1,8 @@
+/* eslint-disable no-useless-escape */
 import { ValueObject } from '../../shared/domain/value-object/ValueObject'
 
 export class LinkOriginal extends ValueObject<string> {
-  private readonly patronURL = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})(:[0-9]{1,5})?(\/[\w/.-]*)*(\?[^\s]*)?$/
+  private readonly patronURL = /^(http(s)?:\/\/)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/
 
   private constructor (value: string) {
     super(value)

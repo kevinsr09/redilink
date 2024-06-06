@@ -2,6 +2,7 @@ import { Input } from '../ui/Input'
 import { useStore } from '@nanostores/react';
 import { isSubmit,linkShortData, isLoading } from '../../stores/formStore';
 import { Loader } from '../ui/Loader';
+import { Input2 } from '../ui/Input2';
 export const FormShortener = (): JSX.Element => {
 
   const $isSubmit = useStore(isSubmit)
@@ -36,6 +37,7 @@ export const FormShortener = (): JSX.Element => {
       <Input name="url" className="w-2/4 mx-auto"
               placeholder="https://rumos.xyz"
               ></Input>
+              <Input2></Input2>
     </form>
 
     {
