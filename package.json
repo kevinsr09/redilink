@@ -7,10 +7,11 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "npx nx run-many -t build && cp -r apps/frontend/dist apps/backend/dist/public",
+    "build": "NODE_ENV=production npx nx run-many -t build && cp -r apps/frontend/dist apps/backend/dist/public",
     "start": "npx nx start @redilink/backend",
     "dev:backend": "npx nx dev @redilink/backend",
-    "dev:frontend": "npx nx dev @redilink/frontend"
+    "dev:frontend": "npx nx dev @redilink/frontend",
+    "dev": "NODE_ENV=dev npx nx run-many -t dev"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",

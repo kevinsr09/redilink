@@ -1,0 +1,12 @@
+{
+  "extends": "@redilink/typescript-configuration/tsconfig.browser.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "outDir": "./dist",
+    "baseUrl": "./"
+  },
+  "exclude": ["dist", "test", "node_modules"],
+  "include": ["src"]
+}

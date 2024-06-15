@@ -33,11 +33,9 @@ export const FormShortener = (): JSX.Element => {
   }
   return (
     <>
-    <form className="" onSubmit={handleSubmit}>
-      <Input name="url" className="w-2/4 mx-auto"
-              placeholder="https://rumos.xyz"
-              ></Input>
-              <Input2></Input2>
+    <form className=" border border-cod-gray-800 p-4" onSubmit={handleSubmit}>
+      
+              <Input2 name="url" className="w-2/4 mx-auto" placeholder='https://rumos.xyz'></Input2>
     </form>
 
     {
